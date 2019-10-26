@@ -82,6 +82,7 @@
     <Compile Include="Scripts\Attribute\ExportAttribute.cs" />
     <Compile Include="Scripts\ExcelData.cs" />
     <Compile Include="Scripts\Config\ExportConfig.cs" />
+    <Compile Include="Scripts\ExportCenter.cs" />
     <Compile Include="Scripts\Exporter\BaseExporter.cs" />
     <Compile Include="Scripts\Exporter\BytesExporter.cs" />
     <Compile Include="Scripts\Exporter\CsExporter.cs" />

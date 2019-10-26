@@ -114,12 +114,12 @@ public partial class MainForm : Form
 		for (int i = 0; i < ExportHandler.ExportTypes.Count; i++)
 		{
 			Type type = ExportHandler.ExportTypes[i];
-			ExportAttribute attr = Attribute.GetCustomAttribute(type, typeof(ExportAttribute)) as ExportAttribute;	
+			ExportAttribute attr = Attribute.GetCustomAttribute(type, typeof(ExportAttribute)) as ExportAttribute;
 			ComboItem item = new ComboItem(type, attr.ExportName);
 			collects.Add(item);
 
 			if (type == defaultExportType)
-				selectedItem = item;	
+				selectedItem = item;
 		}
 
 		cb.DisplayMember = nameof(noneItem.ExportName);
@@ -177,32 +177,16 @@ public partial class MainForm : Form
 	/// </summary>
 	private void createButton_Click(object sender, EventArgs e)
 	{
-		// 清空多语言管理器的缓存数据
-		LanguageMgr.Instance.ClearCacheLanguage();
-		// 加载多语言总表
-		LanguageMgr.Instance.LoadAutoGenerateLanguageToCache();
-
-		// 加载选择的Excel文件列表
+		// 获取选择的Excel文件列表
+		List<string> fileList = new List<string>();
 		for (int i = 0; i < fileListBox.Items.Count; i++)
 		{
 			string filePath = (string)fileListBox.Items[i];
-			ExcelData excelFile = new ExcelData(filePath);
-			if (excelFile.Load())
-			{
-				if (excelFile.Export())
-				{
-					// 导出成功后，我们解析表格的多语言数据
-					var data = LanguageMgr.ParseLanguage(excelFile);
-					LanguageMgr.Instance.CacheLanguage(data);
-				}
-			}
-			excelFile.Dispose();
+			fileList.Add(filePath);
 		}
 
-		// 创建新的多语言总表文件
-		LanguageMgr.Instance.CreateAutoGenerateLanguageFile();
-		// 导出多语言总表文件
-		LanguageMgr.Instance.ExportAutoGenerateLanguageFile();
+		// 导出Excel文件列表
+		ExportCenter.Export(fileList);
 
 		MessageBox.Show("导表完成.");
 	}

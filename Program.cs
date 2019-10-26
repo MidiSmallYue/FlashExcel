@@ -12,11 +12,19 @@ namespace FlashExcel
 		/// 应用程序的主入口点。
 		/// </summary>
 		[STAThread]
-		static void Main()
+		static void Main(string[] args)
 		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+			if (args.Length > 0)
+			{
+				ExportCenter.RunCommand(args);
+				Application.Exit();
+			}
+			else
+			{
+				Application.EnableVisualStyles();
+				Application.SetCompatibleTextRenderingDefault(false);
+				Application.Run(new MainForm());
+			}
 		}
 	}
 }
