@@ -43,16 +43,6 @@ class TextExporter : BaseExporter
 }
 ```
 
-## 表格结构
-表格结构支持定义各种类型：整型，浮点型，布尔，枚举，多语言，字符串，列表，自定义类型。  
-
-![image](https://images.cnblogs.com/cnblogs_com/TravelingLight/1575583/o_flashExcel1.png)  
-
-![image](https://images.cnblogs.com/cnblogs_com/TravelingLight/1575583/o_flashExcel2.png)
-1. 第一行为类型
-2. 第二行为名称
-3. 第三行为导出标记：客户端(C)，战斗服务器(B)，逻辑服务器(S)。
-
 ## 设置
 整形和浮点型的数值单元格，如果策划忘记填写而为空，那么导出的时候工具会报错。我们也可以设置数值单元格自动补齐功能，来规避这个问题。
 
@@ -63,6 +53,16 @@ class TextExporter : BaseExporter
 
 ## 公式支持
 单元格支持数值公式和字符串公式。例如：同一个Excel里的不同页签里的单元格可以通过Excel公式互相引用关联。
+
+## 表格结构
+表格结构支持定义各种类型：整型，浮点型，布尔，枚举，多语言，字符串，列表，自定义类型。  
+
+![image](https://images.cnblogs.com/cnblogs_com/TravelingLight/1575583/o_flashExcel1.png)  
+
+![image](https://images.cnblogs.com/cnblogs_com/TravelingLight/1575583/o_flashExcel2.png)
+1. 第一行为类型
+2. 第二行为名称
+3. 第三行为导出标记：客户端(C)，战斗服务器(B)，逻辑服务器(S)。
 
 ## 注意事项
 Excel内可以设立多个页签，前缀t_的页签会被识别并导出，其它页签可以作为策划的辅助页签或备注页签
