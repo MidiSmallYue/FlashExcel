@@ -2,7 +2,7 @@
 FlashExcel（闪电导表工具）是一个界面化的表格导出工具。根据游戏引擎和项目需求，程序可以很方便的编写自定义的导出器，
 如果不想编写，那么也可以直接使用工具提供的几种默认的导出器。  
 
-![image](https://github.com/gmhevinci/FlashExcel/raw/master/Docs/Image/img1.PNG)
+![image](https://github.com/gmhevinci/FlashExcel/raw/master/Docs/Image/img1.png)
 
 ## 工程
 VS2017 && .net framework 4.6
@@ -46,7 +46,7 @@ class TextExporter : BaseExporter
 ## 设置
 整形和浮点型的数值单元格，如果策划忘记填写而为空，那么导出的时候工具会报错。我们也可以设置数值单元格自动补齐功能，来规避这个问题。
 
-![image](https://github.com/gmhevinci/FlashExcel/raw/master/Docs/Image/img4.PNG)
+![image](https://github.com/gmhevinci/FlashExcel/raw/master/Docs/Image/img4.png)
 
 ## 多语言支持
 工具提供了完整的多语言解决方案，自动生成多语言汇总表格。在我们导出选择的表格的时候，工具会自动把这些表格里的所有多语言列汇总到多语言总表。如果我们想导出所有表格里的多语言内容，那么可以点击界面里的[**多语言 自动化**]按钮，它会检查所有表格里的多语言列并进行汇总。
@@ -57,9 +57,9 @@ class TextExporter : BaseExporter
 ## 表格结构
 表格结构支持定义各种类型：整型，浮点型，布尔，枚举，多语言，字符串，列表，自定义类型。  
 
-![image](https://github.com/gmhevinci/FlashExcel/raw/master/Docs/Image/img2.PNG)
+![image](https://github.com/gmhevinci/FlashExcel/raw/master/Docs/Image/img2.png)
 
-![image](https://github.com/gmhevinci/FlashExcel/raw/master/Docs/Image/img3.PNG)
+![image](https://github.com/gmhevinci/FlashExcel/raw/master/Docs/Image/img3.png)
 
 1. 第一行为类型
 2. 第二行为名称
