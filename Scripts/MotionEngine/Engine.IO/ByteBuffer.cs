@@ -14,7 +14,7 @@ using System.Diagnostics;
 	using UnityEngine;
 #endif
 
-namespace MotionEngine.IO
+namespace MotionFramework.IO
 {
 	/// <summary>
 	/// 通用的字节缓冲类

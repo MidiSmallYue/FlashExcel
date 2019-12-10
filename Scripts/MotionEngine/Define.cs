@@ -5,10 +5,6 @@ namespace System.Numerics
 
 namespace UnityEngine
 {
-}
-
-namespace MotionEngine
-{
 	public struct Vector3
 	{
 		public float x;

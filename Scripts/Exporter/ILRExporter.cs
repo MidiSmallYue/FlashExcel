@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using MotionEngine.IO;
+using MotionFramework.IO;
 
 [ExportAttribute("导出ILR脚本")]
 public class ILRExporter : BaseExporter
@@ -181,12 +181,11 @@ public class ILRExporter : BaseExporter
 	}
 	private void WriteNamespace(StreamWriter sw)
 	{
-		sw.WriteLine("//--自动生成  请勿修改--");
-		sw.WriteLine("//--研发人员实现LANG多语言接口--");
-		sw.WriteLine();
+		sw.WriteLine("//--------------------------------------------------");
+		sw.WriteLine("// 自动生成  请勿修改");
+		sw.WriteLine("// 研发人员实现LANG多语言接口");
+		sw.WriteLine("//--------------------------------------------------");
 
-		sw.WriteLine("using MotionEngine;");
-		sw.WriteLine("using MotionEngine.IO;");
 		sw.WriteLine("using System.Collections.Generic;");
 		sw.WriteLine();
 

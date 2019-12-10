@@ -39,12 +39,13 @@ public class CsExporter : BaseExporter
 	}
 	private void WriteNamespace(StreamWriter sw)
 	{
-		sw.WriteLine("//--自动生成  请勿修改--");
-		sw.WriteLine("//--研发人员实现LANG多语言接口--");
-		sw.WriteLine();
+		sw.WriteLine("//--------------------------------------------------");
+		sw.WriteLine("// 自动生成  请勿修改");
+		sw.WriteLine("// 研发人员实现LANG多语言接口");
+		sw.WriteLine("//--------------------------------------------------");
 
-		sw.WriteLine("using MotionGame;");
-		sw.WriteLine("using MotionEngine.IO;");
+		sw.WriteLine("using MotionFramework.IO;");
+		sw.WriteLine("using MotionFramework.Config;");	
 		sw.WriteLine("using System.Collections.Generic;");
 		sw.WriteLine();
 	}

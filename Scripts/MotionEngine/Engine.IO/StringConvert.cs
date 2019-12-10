@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 	using UnityEngine;
 #endif
 
-namespace MotionEngine.IO
+namespace MotionFramework.IO
 {
 	public static class StringConvert
 	{

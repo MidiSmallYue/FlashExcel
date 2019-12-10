@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using MotionEngine.IO;
+using MotionFramework.IO;
 
 [ExportAttribute("导出LUA脚本")]
 class LuaExporter : BaseExporter
