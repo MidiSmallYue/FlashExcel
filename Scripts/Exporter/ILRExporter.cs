@@ -54,7 +54,7 @@ public class ILRExporter : BaseExporter
 			int idCellNum = GetIDCellNum(createLogo);
 			string id = table.GetCellValue(idCellNum);
 			if (isStringID)
-				id = id.GetHashCode().ToString();
+				id = $"\"{id}\".GetHashCode()";
 
 			sb.Clear();
 			content.Clear();
@@ -63,6 +63,8 @@ public class ILRExporter : BaseExporter
 			{
 				HeadWrapper head = _sheet.Heads[j];
 				if (head.IsNotes || head.Logo.Contains(createLogo) == false)
+					continue;
+				if (head.Name == ConstDefine.StrHeadId)
 					continue;
 
 				string cellValue = table.GetCellValue(head.CellNum);
@@ -74,9 +76,7 @@ public class ILRExporter : BaseExporter
 					cellValue = StringConvert.StringToBool(cellValue).ToString().ToLower();
 
 				if (head.Type == "string")
-				{
 					cellValue = $"\"{cellValue}\"";
-				}
 
 				if (head.Type == "language")
 				{
@@ -173,7 +173,7 @@ public class ILRExporter : BaseExporter
 				if (j < _sheet.Heads.Count - 1) content.Append(", ");
 			}
 
-			sb.Append($"AddElement({id}, new Cfg{_sheet.FileName}Tab({content.ToString()}));");
+			sb.Append($"AddElement({id}, new Cfg{_sheet.FileName}Tab({id}, {content.ToString()}));");
 			allLines.Add(sb.ToString());
 		}
 
