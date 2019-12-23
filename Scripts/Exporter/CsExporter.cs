@@ -121,7 +121,7 @@ public class CsExporter : BaseExporter
 			// HashCode
 			if (head.Name == ConstDefine.StrHeadId && head.Type == "string")
 			{
-				sw.WriteLine(tTwoChar + $"{headName} = byteBuf.ReadInt();");
+				sw.WriteLine(tTwoChar + $"{headName} = byteBuf.ReadUTF().GetHashCode();");
 				continue;
 			}
 
@@ -175,7 +175,7 @@ public class CsExporter : BaseExporter
 			// NOTE：多语言在字节流会是哈希值
 			else if (head.Type == "language")
 			{
-				sw.WriteLine(tTwoChar + $"{headName} =  LANG.Convert(byteBuf.ReadInt());");
+				sw.WriteLine(tTwoChar + $"{headName} = LANG.Convert(byteBuf.ReadInt());");
 			}
 			else if (head.Type == "List<language>")
 			{
