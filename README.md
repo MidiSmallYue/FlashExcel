@@ -19,11 +19,11 @@ VS2017 && .net framework 4.6
 生成一个包含所有表格数据的CS脚本，一般多用于支持ILRuntime的客户端框架。  
 
 4. **BYTE文件导出器**  
-生成一个包含所有表格数据的二进制格式的文件，需要CS脚本导出器配合。  
+生成一个包含所有表格数据的二进制格式的文件，需要 [CS脚本导出器] 配合。  
 
 5. **CS脚本导出器**（需要MotionFramework.IO库）  
 [MotionFramework](https://github.com/gmhevinci/MotionFramework)是一套基于Unity3D引擎的游戏框架。  
-配合BYTE文件导出器，生成一个支持读取二进制数据的CS脚本。该CS脚本可以实现解析零GC。
+配合 [BYTE文件导出器]，生成一个支持读取二进制数据的CS脚本。该CS脚本可以实现解析零GC。
 
 ## 自定义导出器
 创建自定义的导出器非常简单，在工程目录里创建一个继承自BaseExporter的CS类，通过ExportAttribute属性可以设置导出器名称。脚本准备完毕之后我们再次运行程序，会发现导出器列表里已经有了我们自定义的导出器。
