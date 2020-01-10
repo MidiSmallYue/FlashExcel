@@ -21,7 +21,8 @@ VS2017 && .net framework 4.6
 4. **BYTE文件导出器**  
 生成一个包含所有表格数据的二进制格式的文件，需要CS脚本导出器配合。  
 
-5. **CS脚本导出器**（需要MotionEngine.IO库）  
+5. **CS脚本导出器**（需要MotionFramework.IO库）  
+[MotionFramework](https://github.com/gmhevinci/MotionFramework)是一套基于Unity3D引擎的游戏框架。  
 配合BYTE文件导出器，生成一个支持读取二进制数据的CS脚本。该CS脚本可以实现解析零GC。
 
 ## 自定义导出器
