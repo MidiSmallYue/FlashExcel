@@ -51,7 +51,7 @@ public class CsExporter : BaseExporter
 	}
 	private void WriteTabCalss(StreamWriter sw)
 	{
-		sw.WriteLine($"public class Cfg{_sheet.FileName}Tab : ConfigTab");
+		sw.WriteLine($"public class Cfg{_sheet.FileName}Table : ConfigTable");
 	}
 	private void WriteTabClassMember(StreamWriter sw, string createLogo)
 	{
@@ -213,11 +213,11 @@ public class CsExporter : BaseExporter
 		string tChar = "\t";
 		string tTwoChar = "\t\t";
 
-		sw.WriteLine(tChar + "protected override ConfigTab ReadTab(ByteBuffer byteBuffer)");
+		sw.WriteLine(tChar + "protected override ConfigTable ReadTable(ByteBuffer byteBuffer)");
 		sw.WriteLine(tChar + "{");
-		sw.WriteLine(tTwoChar + $"Cfg{_sheet.FileName}Tab tab = new Cfg{_sheet.FileName}Tab" + "{};");
-		sw.WriteLine(tTwoChar + "tab.ReadByte(byteBuffer);");
-		sw.WriteLine(tTwoChar + "return tab;");
+		sw.WriteLine(tTwoChar + $"Cfg{_sheet.FileName}Table table = new Cfg{_sheet.FileName}Table" + "();");
+		sw.WriteLine(tTwoChar + "table.ReadByte(byteBuffer);");
+		sw.WriteLine(tTwoChar + "return table;");
 		sw.WriteLine(tChar + "}");
 	}
 }

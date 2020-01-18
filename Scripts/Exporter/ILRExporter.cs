@@ -173,7 +173,7 @@ public class ILRExporter : BaseExporter
 				if (j < _sheet.Heads.Count - 1) content.Append(", ");
 			}
 
-			sb.Append($"AddElement({id}, new Cfg{_sheet.FileName}Tab({id}, {content.ToString()}));");
+			sb.Append($"AddElement({id}, new Cfg{_sheet.FileName}Table({id}, {content.ToString()}));");
 			allLines.Add(sb.ToString());
 		}
 
@@ -195,7 +195,7 @@ public class ILRExporter : BaseExporter
 	private void WriteTabCalss(StreamWriter sw)
 	{
 		string tChar = "\t";
-		sw.WriteLine(tChar + $"public class Cfg{_sheet.FileName}Tab : ConfigTab");
+		sw.WriteLine(tChar + $"public class Cfg{_sheet.FileName}Table : ConfigTable");
 	}
 	private void WriteTabClassMember(StreamWriter sw, string createLogo)
 	{
@@ -264,7 +264,7 @@ public class ILRExporter : BaseExporter
 			sb.Append($"{headTypeList[i]} {StringHelper.ToLowerFirstChar(headNameList[i])}");
 			if (i < headNameList.Count - 1) sb.Append(", ");
 		}
-		sw.WriteLine(tTwoChar + $"public Cfg{_sheet.FileName}Tab({sb.ToString()})");
+		sw.WriteLine(tTwoChar + $"public Cfg{_sheet.FileName}Table({sb.ToString()})");
 		sw.WriteLine(tTwoChar + "{");
 		for (int i = 0; i < headNameList.Count; i++)
 		{
@@ -296,9 +296,9 @@ public class ILRExporter : BaseExporter
 		sw.WriteLine();
 		sw.WriteLine(tTwoChar + $"private Cfg{_sheet.FileName}() {{ }}");
 
-		sw.WriteLine(tTwoChar + $"public Cfg{_sheet.FileName}Tab GetCfgTab(int key)");
+		sw.WriteLine(tTwoChar + $"public Cfg{_sheet.FileName}Table GetConfigTable(int key)");
 		sw.WriteLine(tTwoChar + "{");
-		sw.WriteLine(tThreeChar + $"return GetTab(key) as Cfg{_sheet.FileName}Tab;");
+		sw.WriteLine(tThreeChar + $"return GetTable(key) as Cfg{_sheet.FileName}Table;");
 		sw.WriteLine(tTwoChar + "}");
 	}
 	private void WriteCfgClassData(StreamWriter sw, string createLogo)
