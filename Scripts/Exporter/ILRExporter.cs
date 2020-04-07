@@ -189,7 +189,7 @@ public class ILRExporter : BaseExporter
 		sw.WriteLine("using System.Collections.Generic;");
 		sw.WriteLine();
 
-		sw.WriteLine("namespace Hotfix");
+		sw.WriteLine("namespace ETHotfix");
 		sw.WriteLine("{");
 	}
 	private void WriteTabCalss(StreamWriter sw)
